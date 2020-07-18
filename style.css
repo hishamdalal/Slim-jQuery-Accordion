@@ -1,0 +1,50 @@
+.accordion .item {
+  position: relative;
+  border: 1px solid gray;
+  margin-bottom: .5rem;
+}
+.accordion .item .title {
+  margin: 0;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 100;
+  cursor: pointer;
+  background: #fff;
+  z-index: 1;
+}
+.accordion .item .content {
+  padding: 0 1rem;
+  background: gray;
+  height: 0;
+  opacity: 0;
+  z-index: 0;
+  transform: scaleY(0);
+  transition: all .5s ease;
+}
+.accordion .item:after {
+  content: "\f105";
+  font-family: fontAwesome;
+  position: absolute;
+  right: 16px;
+  top: 13px;
+  color: gray;
+  transition: all .5s ease;
+}
+.accordion .item.active {
+  border-color: blue;
+}
+.accordion .item.active .title {
+  font-weight: 500;
+  color: blue;
+}
+.accordion .item.active .content {
+  padding: 1rem;
+  padding-bottom: 1.2rem;
+  height: auto;
+  opacity: 1;
+  transform: scaleY(1);
+}
+.accordion .item.active:after {
+  color: blue;
+  transform: rotate(90deg);
+}
